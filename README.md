@@ -9,32 +9,32 @@ We selected a portion of test cases from the development set, allowing StrokeNUW
     <figure style="display: inline-block; width: 43%;">
         <img src="./stroke_order/case_0_p.gif" style="width: 42%; margin: 0.25%;">
         <img src="./stroke_order/case_0_g.gif" style="width: 42%; margin: 0.25%;">
-        <figcaption style="text-align: center;"> Keywords: Person  </figcaption>
+        <figcaption style="text-align: center; display: block;"> Keywords: Person  </figcaption>
     </figure>
     <figure style="display: inline-block; width: 43%;">
         <img src="./stroke_order/case_1_p.gif" style="width: 42%; margin: 0.25%;">
-        <img src="./stroke_order/case_1_g.gif" style="width: 42%; margin: 0.25%;">s
-        <figcaption style="text-align: center;"> Keywords: Robot, Gear </figcaption>
+        <img src="./stroke_order/case_1_g.gif" style="width: 42%; margin: 0.25%;">
+        <figcaption style="text-align: center; display: block;"> Keywords: Robot, Gear </figcaption>
     </figure>
     <figure style="display: inline-block; width: 43%;">
         <img src="./stroke_order/case_2_p.gif" style="width: 42%; margin: 0.25%;">
         <img src="./stroke_order/case_2_g.gif" style="width: 42%; margin: 0.25%;">
-        <figcaption style="text-align: center;"> Keywords: Three Fish, Clownfish  </figcaption>
+        <figcaption style="text-align: center; display: block;"> Keywords: Three Fish, Clownfish  </figcaption>
     </figure>
     <figure style="display: inline-block; width: 43%;">
         <img src="./stroke_order/case_3_p.gif" style="width: 42%; margin: 0.25%;">
         <img src="./stroke_order/case_3_g.gif" style="width: 42%; margin: 0.25%;">
-        <figcaption style="text-align: center;"> Keywords: Cycle, Arrow  </figcaption>
+        <figcaption style="text-align: center; display: block;"> Keywords: Cycle, Arrow  </figcaption>
     </figure>
     <figure style="display: inline-block; width: 43%;">
         <img src="./stroke_order/case_4_p.gif" style="width: 42%; margin: 0.25%;">
         <img src="./stroke_order/case_4_g.gif" style="width: 42%; margin: 0.25%;">
-        <figcaption style="text-align: center;"> Keywords: Wave, Beat </figcaption>
+        <figcaption style="text-align: center; display: block;"> Keywords: Wave, Beat </figcaption>
     </figure>
     <figure style="display: inline-block; width: 43%;">
         <img src="./stroke_order/case_5_p.gif" style="width: 42%; margin: 0.25%;">
         <img src="./stroke_order/case_5_g.gif" style="width: 42%; margin: 0.25%;">
-        <figcaption style="text-align: center;"> Keywords: Clover, Vessel  </figcaption>
+        <figcaption style="text-align: center; display: block;"> Keywords: Clover, Vessel  </figcaption>
     </figure>
 </div>
 
