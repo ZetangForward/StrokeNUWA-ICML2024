@@ -30,6 +30,27 @@ We selected a portion of test cases from the development set, allowing StrokeNUW
 ![alt text](./stroke_order/case_5_g.gif "Keywords: Clover, Vessel, (prediction: left | golden: right)")
 
 
-We can observe that, since the model is trained based on VQ-Stroke, it **follows the stroke order of the original SVGs**. Partically, in each SVG, we can clearly see (especially in the complex SVGs of the keywords "Person", "Robot" and "Fish") that the strokes are continuous and have certain semantic characteristics, such as **first outlining the shape, then filling in details within the outline**.
+We can observe that, since the model is trained based on VQ-Stroke, it **basically follows the stroke order of the original SVGs**. Partically, in each SVG, we can clearly see (especially in the complex SVGs of the keywords "Person", "Robot" and "Fish") that the strokes are continuous and have certain semantic characteristics, such as **first outlining the shape, then filling in details within the outline**.
 
 ``Noting`` You can find more gif images demonstrating the stroke order in the `./more_cases` folder.
+
+## Semantic Clusters of Strokes
+
+We adopt the following configuration of VQ-Stroke (**the depth of the residual vector quantization is 2, with compression rates of 2 and 4, respectively, and a vocabulary size of 4096**, which is the model configuration used in the main experiment), and performed clustering on all stroke tokens in the stroke codebook. 
+
+Here we present the results of vocabulary clustering under the condition of a **compression rate of 2**.
+
+<p align="center">
+  <img src="./src/cluster.png" width="80%" />
+</p>
+
+We manually set the number of clusters to 10 categories and analyze them using the KNN+T-SNE method (https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). 
+We have divided the clustering results into two types. 
+
+Specifically, the cases in the right column of the above figure indicate that **the distribution of these stroke tokens is very concentrated**. 
+These Stroke Tokens have very distinct features, such as representing **Dots, Vertical Lines, or direction-specific short lines**. 
+
+In contrast, the cases in the left column represent strokes with **less distinct features**. 
+This type of strokes includes **various different categories of stroke types** (for example, short/long strokes, direction-specific hooks, etc.). 
+We believe that these types of strokes (on the left) **constitute complex SVGs**, and are greatly influenced by the vocabulary size set in VQ-Stroke.
+ A larger vocabulary may learn more complex and layered strokes.
