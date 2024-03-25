@@ -2,8 +2,30 @@
 
 ## SVG Generation with more Attributes
 
+### Illustration of SVG Generation with more attributes (color, stroke width and opacity)
+
+In order to incorporate more elements into the process of Stroke generation, we have expanded the Code to Matrix method (as described in section 3.2.1 of the original paper). Specifically, we have added three placeholders to the original matrix, so that $\mathcal{K}_{i}^{j} = f(\mathcal{C}_{i}^{j}) = \left(T, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1\right)_{i}^{j}$ becomes $(\mathcal{K}_{i}^{j})^{\prime} = f^{\prime}(\mathcal{C}_{i}^{j}) = \left(T, color_i, width_i, opacity_i, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1\right)_{i}^{j}$. 
+
+`It's worth noting` that the placeholders here can be expanded to any number, which can be defined by the user and reflected to the SVG through rules. 
+For simplicity of demonstration and validate the feasibility of adding more attributes into ''stroke tokens'', we have inserted three special placeholders:
+- *$color_i$*: to control the color of the SVG path;
+- *$width_i$*: to control the width of the SVG path; 
+- *$opacity_i$*: to control the transparency of the SVG path. 
+
+Since the SVG dataset we used does not provide these parameters, we randomly generated some values for a toy experiment.
+
+#### The comparison of effects using different attributes:
+The **Raw predicted SVG** only uses numerical coordinates as attributes, while **Random Colored SVG** fills the color attribute in the SVG Path using a rule-based method. 
+The two figures below show the results trained with **VQ-Stroke** with different dictionary sizes and additional attributes, e.g., color, path width, and opacity. 
 <p align="center">
   <img src="./src/controlled_svg_generation.png" width="80%"/>
+</p>
+
+
+#### Attribute Controlled Prediction from EDM model
+We retrain the EDM model in the paper using the aforemented ''stroke tokens'' which fused with 3 attributes. Finally, the effect of Figure 2 in original paper is shown below:
+<p align="center">
+  <img src="./src/main_colored.png" width="80%"/>
 </p>
 
 ## Prediction of Stroke Order 
