@@ -4,7 +4,8 @@
 
 ### Illustration of SVG Generation with more attributes (color, stroke width and opacity)
 
-In order to incorporate more elements into the process of Stroke generation, we have expanded the Code to Matrix method (as described in section 3.2.1 of the original paper). Specifically, we have added three placeholders to the original matrix, so that $\mathcal{K}_{i}^{j} = f(\mathcal{C}_{i}^{j}) = \left(T, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1\right)_{i}^{j}$ becomes $(\mathcal{K}_{i}^{j})^{\prime} = f^{\prime}(\mathcal{C}_{i}^{j}) = \left(T, color_i, width_i, opacity_i, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1\right)_{i}^{j}$. 
+In order to incorporate more elements into the process of Stroke generation, we have expanded the Code to Matrix method (as described in section 3.2.1 of the original paper). Specifically, we have added three placeholders to the original matrix, so that 
+`K_{ij} = f(C_{ij}) = (T, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1)_{ij}` (Equation 1 in original paper) becomes `(\mathcal{K}_{i}^{j})^{\prime} = f^{\prime}(\mathcal{C}_{i}^{j}) = (T, color_i, width_i, opacity_i, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1)_{i}^{j}`.
 
 `It's worth noting` that the placeholders here can be expanded to any number, which can be defined by the user and reflected to the SVG through rules. 
 For simplicity of demonstration and validate the feasibility of adding more attributes into ''stroke tokens'', we have inserted three special placeholders:
