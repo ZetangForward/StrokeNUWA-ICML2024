@@ -24,7 +24,8 @@ The two figures below show the results trained with **VQ-Stroke** with different
 
 
 #### Attribute Controlled Prediction from EDM model
-We retrain the EDM model in the paper using the aforemented ''stroke tokens'' which fused with 3 attributes. Finally, the effect of Figure 2 in original paper is shown below:
+We retrain the EDM model in the paper using the aforemented ''stroke tokens'' which fused with 3 attributes. 
+Finally, the effect of Figure 2 in original paper is shown below:
 <p align="center">
   <img src="./src/main_colored.png" width="80%"/>
 </p>
