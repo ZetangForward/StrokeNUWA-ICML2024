@@ -82,4 +82,24 @@ These Stroke Tokens have very distinct features, such as representing **Dots, Ve
 In contrast, the cases in the left column represent strokes with **less distinct features**. 
 This type of strokes includes **various different categories of stroke types** (for example, short/long strokes, direction-specific hooks, etc.). 
 We believe that these types of strokes (on the left) **constitute complex SVGs**, and are greatly influenced by the vocabulary size set in VQ-Stroke.
- A larger vocabulary may learn more complex and layered strokes.
+A larger vocabulary may learn more complex and layered strokes.
+
+
+## Comparison with Other Visual Representation Method
+
+### Reconstruction from VQ-Stroke
+<p align="center">
+  <img src="./src/VQ-Stroke-results.png" width="80%"/>
+</p>
+
+
+### Reconstruction from LFQ
+<p align="center">
+  <img src="./src/LFQ-results.png" width="80%"/>
+</p>
+
+
+### Gloden SVG
+<p align="center">
+  <img src="./src/golden.png" width="80%"/>
+</p>
