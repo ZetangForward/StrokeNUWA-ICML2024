@@ -85,14 +85,14 @@ We believe that these types of strokes (on the left) **constitute complex SVGs**
 A larger vocabulary may learn more complex and layered strokes.
 
 
-## Comparison with Other Visual Representation Method
+## Comparison with Other Visual Representation Methods
 We also explore LFQ[1] visual encoding method in addition to the VQ-VAE encoding approach. Specifically, the parameters for our VQ-VAE and LFQ are as follows:
 
 | Methods | #Down-Sample Blocks | Conv1d-Stride | Codebook Size | Block / Quantizer Dimension |
 | --- | :---: | :---: | :---: | :---: |
 | VQ-VAE | 2 | 2 | 4096 | 512 / 512 |
-| LFQ (experiment 1) | 2 | 2 | 8192 | 512 / 13 |
-| LFQ (experiment 2) | 2 | 2 | 16384 | 512 / 14 |
+| LFQ (Experiment 1) | 2 | 2 | 8192 | 512 / 13 |
+| LFQ (Experiment 2) | 2 | 2 | 16384 | 512 / 14 |
 
 
 Since the official training code of LFQ is not provided, we conduct the training based on a third-party's reproduced code [https://github.com/lucidrains/vector-quantize-pytorch](https://github.com/lucidrains/vector-quantize-pytorch). In the case of LFQ (Experiment 1). The "commitment loss" not only exhibits oscillations but also converges rapidly. At the same time, the "Total Loss" and "Reconstruction Loss" show a stable trend after training for 3.5K steps. 
@@ -125,18 +125,28 @@ Therefore, we adopt the approach of LFQ (Experiment 2). The final reconstruction
 
 ## Selection about Different Model Architecture
 Here we describe the process of the backbone model selection process.
+Despite the many successful multimodal models that currently exist, many of which use visual encoding to transform visual information into discrete tokens[2,3,4], we made the following attempts (Vocab-Separation Decoder-Only Model, Vocab-Merge Decoder-Only Model, and Encoder-Decoder Model) in selecting the backbone LLM.
 
-### Split Dict Decoder-only Model
+### Vocab-Separation Decoder-Only Model (Fails to converge on validation set)
+If the vocabulary separation approach is employed, it requires utilizing two different sets of embeddings and prediction heads as well as the loss calculation for the text portion (prompt) and stroke token portion. We provide the loss curve below. Despite the continual decline in the training set's loss, the loss on the development set quickly converges and stabilizes at a high value (around 16). Even with adjustments to the weight of the loss for different parts, similar outcomes persist.
 
 <p align="center">
   <img src="./training/split-dict-decoder-only.png" width="80%"/>
 </p>
 
-### Merge Dict Decoder-only Model (Possible)
+### Vocab-Merge Decoder-Only Model (Possible)
 
-
+<p align="center">
+  <img src="./training/merge-dict-decoder-only.png" width="80%"/>
+</p>
 
 
 
 ## Reference
 [1] Yu, Lijun, et al. "Language Model Beats Diffusion--Tokenizer is Key to Visual Generation." arXiv preprint arXiv:2310.05737 (2023).
+
+[2] Esser, Patrick, Robin Rombach, and Bjorn Ommer. "Taming transformers for high-resolution image synthesis." Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2021.
+
+[3] Yan, Wilson, et al. "Videogpt: Video generation using vq-vae and transformers." arXiv preprint arXiv:2104.10157 (2021).
+
+[4] Ramesh, Aditya, et al. "Zero-shot text-to-image generation." International conference on machine learning. Pmlr, 2021.
