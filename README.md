@@ -86,6 +86,16 @@ A larger vocabulary may learn more complex and layered strokes.
 
 
 ## Comparison with Other Visual Representation Method
+We also explore LFQ[1] visual encoding method in addition to the VQ-VAE encoding approach. Specifically, the parameters for our VQ-VAE and LFQ are as follows:
+
+| Methods | #Down-Sample Blocks | Conv1d-Stride | Codebook Size | Block / Quantizer Dimension | Model Parameters | 
+| --- | --- | --- | --- | --- | --- |
+| VQ-VAE | 2 | 2 | 4096 | 512 / 512 |
+| LFQ (experiment 1)   | 2 | 2 | 8192 | 512 / 13 |
+| LFQ (experiment 2)   | 2 | 2 | 16384 | 512 / 14 |
+
+
+
 
 ### Reconstruction from VQ-Stroke
 <p align="center">
@@ -103,3 +113,21 @@ A larger vocabulary may learn more complex and layered strokes.
 <p align="center">
   <img src="./src/golden.png" width="80%"/>
 </p>
+
+
+## Selection about Different Model Architecture
+
+### Split Dict Decoder-only Model (Not Possible)
+
+<p align="center">
+  <img src="./training/split-dict-decoder-only.png" width="80%"/>
+</p>
+
+### Merge Dict Decoder-only Model (Possible)
+
+
+
+
+
+## Reference
+[1] Yu, Lijun, et al. "Language Model Beats Diffusion--Tokenizer is Key to Visual Generation." arXiv preprint arXiv:2310.05737 (2023).
