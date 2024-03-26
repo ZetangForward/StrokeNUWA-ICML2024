@@ -165,6 +165,21 @@ The encoder is naturally suitable for text input, as it is a language model (we 
 </p>
 
 
+## About Parameter Efficient Finetuning Methods
+In addition to using the full-data finetune model, we also experiment with the Parameter-Efficient Method, namely LoRA. The LoRA settings are as follows:
+
+| Lora_r | lora_alpha | lora_dropout |
+| :---: | :---: | :---: |
+| 8 | 16 | 0.05 |
+
+At the beginning, we utilize the LoRA approach for fine-tuning instead of full parameter fine-tuning. Theoretically, this method should make the most of the LLM model's prior knowledge. However, during the training process, we observe that it is difficult for the model's loss on the development set to converge (as shown in the loss curve below). One possible reason is that the diversity of the SVG training data is very high (nearly 1 million data samples in training data), and LoRA may not be able to learn all the patterns, resulting in overfitting on some SVGs. Moreover, according to our testing results, the model trained with LoRA could not follow text instructions to generate the corresponding SVGs. Therefore, eventually, we adopted a full-data fine-tuning training strategy.
+We also provide some generated samples from Flan-T5 model finetuned with LoRA strategy.
+
+#### Loss Curve of Encoder-Decoder Model Fined with LoRA
+<p align="center">
+  <img src="./training/encdec-model-lora-loss" width="80%"/>
+</p>
+
 
 
 ## Reference
