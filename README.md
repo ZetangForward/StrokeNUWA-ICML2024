@@ -95,29 +95,38 @@ We also explore LFQ[1] visual encoding method in addition to the VQ-VAE encoding
 | LFQ (experiment 2) | 2 | 2 | 16384 | 512 / 14 |
 
 
+Since the official training code of LFQ is not provided, we conduct the training based on a third-party's reproduced code [https://github.com/lucidrains/vector-quantize-pytorch](https://github.com/lucidrains/vector-quantize-pytorch). In the case of LFQ (Experiment 1). The "commitment loss" not only exhibits oscillations but also converges rapidly. At the same time, the "Total Loss" and "Reconstruction Loss" show a stable trend after training for 3.5K steps. 
+
+![alt text](./training/LFQ_EXP1_LOSS.png)
 
 
-### Reconstruction from VQ-Stroke
+Therefore, we adopt the approach of LFQ (Experiment 2). The final reconstruction results are shown below, where we also show the reconstruction results of VQ-Stroke and ground truth SVG.
+
+`Note`: We find that the reconstruction effectiveness of LFQ is not as good as that of the VQ-VAE approach, and LFQ also uses a larger vocabulary, which is disadvantageous when combined with LLM later (a larger vocabulary means it is more difficult to learn). This is also the main reason why we do not adopt LFQ in the end.
+
+
+### Reconstruction SVGs from VQ-Stroke (based on VQ-VAE)
 <p align="center">
   <img src="./src/VQ-Stroke-results.png" width="80%"/>
 </p>
 
 
-### Reconstruction from LFQ
+### Reconstruction SVGs from LFQ
 <p align="center">
   <img src="./src/LFQ-results.png" width="80%"/>
 </p>
 
 
-### Gloden SVG
+### Ground Truth SVG
 <p align="center">
   <img src="./src/golden.png" width="80%"/>
 </p>
 
 
 ## Selection about Different Model Architecture
+Here we describe the process of the backbone model selection process.
 
-### Split Dict Decoder-only Model (Not Possible)
+### Split Dict Decoder-only Model
 
 <p align="center">
   <img src="./training/split-dict-decoder-only.png" width="80%"/>
