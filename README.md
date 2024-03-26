@@ -131,7 +131,7 @@ Despite the many successful multimodal models that currently exist, many of whic
 If the vocabulary separation approach is employed, it requires utilizing two different sets of embeddings and prediction heads as well as the loss calculation for the text portion (prompt) and stroke token portion. We provide the loss curve below. Despite the continual decline in the training set's loss, the loss on the development set quickly converges and stabilizes at a high value (around 16). Even with adjustments to the weight of the loss for different parts, similar outcomes persist.
 
 <p align="center">
-  <img src="./training/split-dict-decoder-only.png" width="80%"/>
+  <img src="./training/vocab-sep-decoder-only.png" width="80%"/>
 </p>
 
 ### Vocab-Merge Decoder-Only Model (Possible)
