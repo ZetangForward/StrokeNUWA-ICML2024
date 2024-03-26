@@ -172,12 +172,17 @@ In addition to using the full-data finetune model, we also experiment with the P
 | :---: | :---: | :---: |
 | 8 | 16 | 0.05 |
 
-At the beginning, we utilize the LoRA approach for fine-tuning instead of full parameter fine-tuning. Theoretically, this method should make the most of the LLM model's prior knowledge. However, during the training process, we observe that it is difficult for the model's loss on the development set to converge (as shown in the loss curve below). One possible reason is that the diversity of the SVG training data is very high (nearly 1 million data samples in training data), and LoRA may not be able to learn all the patterns, resulting in overfitting on some SVGs. Moreover, according to our testing results, the model trained with LoRA could not follow text instructions to generate the corresponding SVGs. Therefore, eventually, we adopted a full-data fine-tuning training strategy.
-We also provide some generated samples from Flan-T5 model finetuned with LoRA strategy.
+At the beginning, we utilize the LoRA approach for fine-tuning instead of full parameter fine-tuning. Theoretically, this method should make the most of the LLM model's prior knowledge. However, during the training process, we observe that it is difficult for the model's loss on the development set to converge (as shown in the loss curve below). One possible reason is that the diversity of the SVG training data is very high (nearly 1 million data samples in training data), and LoRA may not be able to learn all the patterns, resulting in **overfitting on some SVGs**. Moreover, according to our testing results, the model trained with LoRA could not follow text instructions to generate the corresponding SVGs. Therefore, eventually, we adopted a full-data fine-tuning training strategy.
+We also provide some generated samples from Flan-T5 model finetuned with LoRA strategy, where we can observe that Flan-T5 finetuned with LoRA fails to generate most of SVGs, but on some specific prompts (such as "briefcase"), the model can generate the corresponding SVG (row 6, column 4).
+
+<p align="center">
+  <img src="./src/flant5-lora-results.png" width="60%"/>
+</p>
 
 #### Loss Curve of Encoder-Decoder Model Fined with LoRA
+
 <p align="center">
-  <img src="./training/encdec-model-lora-loss" width="80%"/>
+  <img src="./src/encdec-model-lora-loss.png" width="80%"/>
 </p>
 
 
