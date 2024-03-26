@@ -132,6 +132,8 @@ If the vocabulary separation approach is employed, it requires utilizing two dif
 
 `Note`: We believe that the main reason causing this issue is the difficulty in training the transition tokens between two modalities (i.e., the special tokens for transitioning from textual modality to stroke modality).
 
+#### Loss Curve of Vocab-Separation Decoder-Only Model
+
 <p align="center">
   <img src="./training/vocab-sep-decoder-only.png" width="80%"/>
 </p>
@@ -144,12 +146,18 @@ In order to leverage the prior knowledge from pre-trained LLMs, under the vocab-
   <img src="./src/decoder-only-results.png" width="80%"/>
 </p>
 
+#### Loss Curve of Vocab-Merge Decoder-Only Model
 <p align="center">
   <img src="./training/merge-dict-decoder-only.png" width="80%"/>
 </p>
 
 ### Encoder-Decoder Model (Successful)
+We ultimately adopt the Encoder-Decoder Model because, compared to the Decoder Model, the Encoder and Decoder each utilize distinct vocabularies. 
+The encoder is naturally suitable for text input, as it is a language model (we use Flan-T5 model), while the decoder simply requires the replacement of the Embedding and the LM Head, followed by continual training, to produce outcomes in another modality, such as the strokes mentioned in the paper. We observe that the Encoder-Decoder model is also employed in other work of multimodal fusion[5].
 
+`Note`: We find that after adopting the encoder-decoder architecture, the model's performance, in terms of loss (shown below), is better on both the training and development sets compared to the decoder-only model.
+
+#### Loss Curve of Encoder-Decoder Model
 <p align="center">
   <img src="./training/enc-dec.png" width="80%"/>
 </p>
@@ -165,3 +173,5 @@ In order to leverage the prior knowledge from pre-trained LLMs, under the vocab-
 [3] Yan, Wilson, et al. "Videogpt: Video generation using vq-vae and transformers." arXiv preprint arXiv:2104.10157 (2021).
 
 [4] Ramesh, Aditya, et al. "Zero-shot text-to-image generation." International conference on machine learning. Pmlr, 2021.
+
+[5] Kondratyuk, Dan, et al. "Videopoet: A large language model for zero-shot video generation." arXiv preprint arXiv:2312.14125 (2023).
