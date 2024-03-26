@@ -91,7 +91,7 @@ We also explore LFQ[1] visual encoding method in addition to the VQ-VAE encoding
 | Methods | #Down-Sample Blocks | Conv1d-Stride | Codebook Size | Block / Quantizer Dimension | Model Parameters | 
 | --- | --- | --- | --- | --- | --- |
 | VQ-VAE | 2 | 2 | 4096 | 512 / 512 | 172 MB |
-| LFQ (experiment 1)   | 2 | 2 | 8192 | 512 / 13 |
+| LFQ (experiment 1)   | 2 | 2 | 8192 | 512 / 13 | 137 MB |
 | LFQ (experiment 2)   | 2 | 2 | 16384 | 512 / 14 |
 
 
