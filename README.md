@@ -136,6 +136,7 @@ If the vocabulary separation approach is employed, it requires utilizing two dif
 
 ### Vocab-Merge Decoder-Only Model (Possible)
 
+In order to leverage the prior knowledge from pre-trained models, under the setting of vocabulary merging, we arrange the ids of the new stroke tokens after the textual tokens, and expand the Sequence Length dimension of the embedding and LM_head in the decoder-only model, followed by full finetuning. The subsequent loss curve is presented below.
 <p align="center">
   <img src="./training/merge-dict-decoder-only.png" width="80%"/>
 </p>
