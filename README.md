@@ -107,19 +107,19 @@ Therefore, we adopt the approach of LFQ (Experiment 2). The final reconstruction
 
 ### Reconstruction SVGs from VQ-Stroke (based on VQ-VAE)
 <p align="center">
-  <img src="./src/VQ-Stroke-results.png" width="80%"/>
+  <img src="./src/VQ-Stroke-results.png" width="60%"/>
 </p>
 
 
 ### Reconstruction SVGs from LFQ
 <p align="center">
-  <img src="./src/LFQ-results.png" width="80%"/>
+  <img src="./src/LFQ-results.png" width="60%"/>
 </p>
 
 
 ### Ground Truth SVG
 <p align="center">
-  <img src="./src/golden.png" width="80%"/>
+  <img src="./src/golden.png" width="60%"/>
 </p>
 
 
@@ -128,7 +128,9 @@ Here we describe the process of the backbone model selection process.
 Despite the many successful multimodal models that currently exist, many of which use visual encoding to transform visual information into discrete tokens[2,3,4], we made the following attempts (Vocab-Separation Decoder-Only Model, Vocab-Merge Decoder-Only Model, and Encoder-Decoder Model) in selecting the backbone LLM.
 
 ### Vocab-Separation Decoder-Only Model (Fails to converge on validation set)
-If the vocabulary separation approach is employed, it requires utilizing two different sets of embeddings and prediction heads as well as the loss calculation for the text portion (prompt) and stroke token portion. We provide the loss curve below. Despite the continual decline in the training set's loss, the loss on the development set quickly converges and stabilizes at a high value (around 16). Even with adjustments to the weight of the loss for different parts, similar outcomes persist.
+If the vocabulary separation approach is employed, it requires utilizing two different sets of embeddings and prediction heads as well as the loss calculation for the text portion (prompt) and stroke token portion. We provide the loss curve below. Despite the continual decline in the training set's loss, the loss on the development set quickly converges and stabilizes at a high value (around 16). Even with adjustments to the weight of the loss for different parts, similar outcomes persist. 
+
+`Note`: We believe that the main reason causing this issue is the difficulty in training the transition tokens between two modalities (i.e., the special tokens for transitioning from textual modality to stroke modality).
 
 <p align="center">
   <img src="./training/vocab-sep-decoder-only.png" width="80%"/>
@@ -136,7 +138,11 @@ If the vocabulary separation approach is employed, it requires utilizing two dif
 
 ### Vocab-Merge Decoder-Only Model (Fail to generate complex SVGs)
 
-In order to leverage the prior knowledge from pre-trained LLMs, under the vocab-merge setting, we arrange the index of the new stroke tokens after the textual tokens, and expand the embedding and LM_head in the decoder-only model along the sequence length dimension, followed by full finetuning. The subsequent loss curve is presented below. We can observe that the decoder-only model exhibits lower loss reduction compared to the Vocab-Separation approach (on both the Training and Validation sets). **However, the model can only generate very simple SVGs, and it still fails to predict complex SVGs. We present some examples below.**
+In order to leverage the prior knowledge from pre-trained LLMs, under the vocab-merge setting, we arrange the index of the new stroke tokens after the textual tokens, and expand the embedding and LM_head in the decoder-only model along the sequence length dimension, followed by full finetuning. The subsequent loss curve is presented below. We can observe that the decoder-only model exhibits lower loss reduction compared to the Vocab-Separation approach (on both the Training and Validation sets). **However, the decoder-only model under the vocab merge setting can only generate very simple SVGs, and it still fails to predict complex SVGs. We present some examples below.**
+
+<p align="center">
+  <img src="./src/decoder-only-results.png" width="80%"/>
+</p>
 
 <p align="center">
   <img src="./training/merge-dict-decoder-only.png" width="80%"/>
