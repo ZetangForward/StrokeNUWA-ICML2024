@@ -140,7 +140,7 @@ If the vocabulary separation approach is employed, it requires utilizing two dif
 
 ### Vocab-Merge Decoder-Only Model (Fail to generate complex SVGs)
 
-In order to leverage the prior knowledge from pre-trained LLMs, under the vocab-merge setting, we arrange the index of the new stroke tokens after the textual tokens, and expand the embedding and LM_head in the decoder-only model along the sequence length dimension, followed by full finetuning. The subsequent loss curve is presented below. We can observe that the decoder-only model exhibits lower loss reduction compared to the Vocab-Separation approach (on both the Training and Validation sets). **However, the decoder-only model under the vocab merge setting can only generate very simple SVGs, and it still fails to predict complex SVGs. We present some examples below.**
+In order to leverage the prior knowledge from pre-trained LLMs, under the vocab-merge setting, we arrange the index of the new stroke tokens after the textual tokens, and expand the embedding and LM_head in the decoder-only model along the sequence length dimension, followed by full finetuning. The subsequent loss curve is presented below. We can observe that the decoder-only model exhibits lower loss reduction compared to the Vocab-Separation approach (on both the Training and Validation sets). **However, the decoder-only model under the vocab merge setting can only generate very simple SVGs with low quality, and it fails to predict complex SVGs. We present some examples below.**
 
 <p align="center">
   <img src="./src/decoder-only-results.png" width="80%"/>
