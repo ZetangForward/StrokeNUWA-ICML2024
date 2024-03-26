@@ -127,6 +127,8 @@ Therefore, we adopt the approach of LFQ (Experiment 2). The final reconstruction
 Here we describe the process of the backbone model selection process.
 Despite the many successful multimodal models that currently exist, many of which use visual encoding to transform visual information into discrete tokens[2,3,4], we made the following attempts (Vocab-Separation Decoder-Only Model, Vocab-Merge Decoder-Only Model, and Encoder-Decoder Model) in selecting the backbone LLM.
 
+`Note`: We utilize OpenLLaMA-V2-3B(https://github.com/openlm-research/open_llama) as the decoder-only model backbone.
+
 ### Vocab-Separation Decoder-Only Model (Fails to converge on validation set)
 If the vocabulary separation approach is employed, it requires utilizing two different sets of embeddings and prediction heads as well as the loss calculation for the text portion (prompt) and stroke token portion. We provide the loss curve below. Despite the continual decline in the training set's loss, the loss on the development set quickly converges and stabilizes at a high value (around 16). Even with adjustments to the weight of the loss for different parts, similar outcomes persist. 
 
@@ -175,3 +177,4 @@ The encoder is naturally suitable for text input, as it is a language model (we 
 [4] Ramesh, Aditya, et al. "Zero-shot text-to-image generation." International conference on machine learning. Pmlr, 2021.
 
 [5] Kondratyuk, Dan, et al. "Videopoet: A large language model for zero-shot video generation." arXiv preprint arXiv:2312.14125 (2023).
+
