@@ -88,11 +88,11 @@ A larger vocabulary may learn more complex and layered strokes.
 ## Comparison with Other Visual Representation Method
 We also explore LFQ[1] visual encoding method in addition to the VQ-VAE encoding approach. Specifically, the parameters for our VQ-VAE and LFQ are as follows:
 
-| Methods | #Down-Sample Blocks | Conv1d-Stride | Codebook Size | Block / Quantizer Dimension | Model Parameters | 
-| --- | --- | --- | --- | --- | --- |
-| VQ-VAE | 2 | 2 | 4096 | 512 / 512 | 172 MB |
-| LFQ (experiment 1)   | 2 | 2 | 8192 | 512 / 13 | 137 MB |
-| LFQ (experiment 2)   | 2 | 2 | 16384 | 512 / 14 |
+| Methods | #Down-Sample Blocks | Conv1d-Stride | Codebook Size | Block / Quantizer Dimension |
+| --- | :---: | :---: | :---: | :---: |
+| VQ-VAE | 2 | 2 | 4096 | 512 / 512 |
+| LFQ (experiment 1) | 2 | 2 | 8192 | 512 / 13 |
+| LFQ (experiment 2) | 2 | 2 | 16384 | 512 / 14 |
 
 
 
