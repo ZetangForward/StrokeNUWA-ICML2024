@@ -1,4 +1,4 @@
-# Supplemental Materials
+# Supplemental Materials for Rebuttal
 
 ## **Section 1**: SVG Generation with more Attributes
 
