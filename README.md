@@ -73,7 +73,7 @@ Here we present the results of vocabulary clustering under the condition of a **
   <img src="./src/cluster.png" width="80%" />
 </p>
 
-We manually set the number of clusters to 10 categories and analyze them using the KNN+T-SNE method (https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). 
+We manually set the number of clusters to 10 categories and analyze them using the T-SNE method (https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). 
 We have divided the clustering results into two types. 
 
 Specifically, the cases in the right column of the above figure indicate that **the distribution of these stroke tokens is very concentrated**. 
