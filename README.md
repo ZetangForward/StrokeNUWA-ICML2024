@@ -165,8 +165,8 @@ The encoder is naturally suitable for text input, as it is a language model (we 
 </p>
 
 
-## About Parameter Efficient Finetuning Methods
-In addition to using the full-data finetune model, we also experiment with the Parameter-Efficient Method, namely LoRA. The LoRA settings are as follows:
+## Finetuning with Parameter Efficient Methods
+In addition to using the full-parameter finetuning method, we also experiment with the parameter-efficient method, LoRA. The LoRA setting is as follows:
 
 | Lora_r | lora_alpha | lora_dropout |
 | :---: | :---: | :---: |
@@ -184,6 +184,10 @@ We also provide some generated samples from Flan-T5 model finetuned with LoRA st
 <p align="center">
   <img src="./src/encdec-model-lora-loss.png" width="80%"/>
 </p>
+
+
+## SVG Generation with Different Textual Prompts
+ 
 
 
 
