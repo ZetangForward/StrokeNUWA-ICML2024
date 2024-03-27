@@ -188,7 +188,11 @@ We also provide some generated samples from Flan-T5 model finetuned with LoRA st
 
 ## SVG Generation with Different Textual Prompts
 
-We have experimented with different textual prompts on StrokeNUWA and have compiled the corresponding evaluation results, as shown below. The results indicate that although various textual prompts are received, StrokeNUWA generates SVGs that are somewhat varied but overall congruent with the prompts. However, we noticed a failure in StrokeNUWA when processing excessively long text inputs. This is primarily due to the model being trained exclusively with key words and not under instructions of lengthy texts, preventing it from generalizing to more extended directives.
+We have experimented with different textual prompts on StrokeNUWA and have compiled the corresponding evaluation results, as shown in the Appendix B.1 of the submitted paper. The results indicate that although various textual prompts are received, StrokeNUWA can generate SVGs that are somewhat varied but overall congruent with the prompts. For more details (including the templates for textual prompts and evaluation results), please refer to Appendix B.1 of the submitted paper.
+
+<p align="center">
+  <img src="./src/textual_prompt.png" width="80%"/>
+</p>
 
 
 ## Reference
