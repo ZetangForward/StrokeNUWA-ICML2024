@@ -2,7 +2,8 @@
 
 ## Table of Contents
 
-- [StrokeNUWA_Appendix](./StrokeNUWA_Appendix.pdf)
+- [**Revision**: StrokeNUWA_Paper_Revision](./StrokeNUWA_Revision.pdf)
+- [**Revision**: StrokeNUWA_Paper_Appendix](./StrokeNUWA_Appendix.pdf)
 - [**Section 1**: SVG Generation with more Attributes](#section1)
 - [**Section 2**: Prediction of Stroke Order](#section2)
 - [**Section 3**: Semantic Clusters of Stroke](#section3)
