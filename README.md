@@ -1,5 +1,5 @@
 # StrokeNUWA-ICML2024-Anonymous-Supplementary-Materials
-Dear Reviewers, within this anonymous link, we present a substantial selection of supplemental experiments, minor revisions to the paper (**with blue font indicating modifications**), and an Appendix for your reference. Please use the following table of contents for expedited navigation.
+Dear Reviewers, within this anonymous link, we present a substantial selection of supplemental experiments, minor revisions to the paper (**with blue font indicating modifications**), and an additional Appendix for your reference. Please use the following table of contents for expedited navigation.
 
 ## Table of Contents
 - [**Revision**: StrokeNUWA_Paper_Revision](./StrokeNUWA_Revision.pdf)
