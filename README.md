@@ -8,7 +8,7 @@ In order to incorporate more elements into the process of Stroke generation, we 
 `K_{ij} = f(C_{ij}) = (T, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1)_{ij}` (Equation 1 in original paper) becomes `(\mathcal{K}_{i}^{j})^{\prime} = f^{\prime}(\mathcal{C}_{i}^{j}) = (T, color_i, width_i, opacity_i, x_0, y_0, c^{x}_0, c^{y}_0, c^{x}_1, c^{y}_1, x_1, y_1)_{i}^{j}`.
 
 `It's worth noting` that the placeholders here can be expanded to any number, which can be defined by the user and reflected to the SVG through rules. 
-For simplicity of demonstration and validate the feasibility of adding more attributes into ''stroke tokens'', we have inserted three special placeholders:
+For simplicity of demonstration and validate the feasibility of adding more attributes into ''stroke tokens'', we have insert three special placeholders:
 - *$color_i$*: to control the color of the SVG path;
 - *$width_i$*: to control the width of the SVG path; 
 - *$opacity_i$*: to control the transparency of the SVG path. 
@@ -17,7 +17,7 @@ Since the SVG dataset we used does not provide these parameters, we randomly gen
 
 #### The comparison of effects using different attributes:
 The **Raw predicted SVG** only uses numerical coordinates as attributes, while **Random Colored SVG** fills the color attribute in the SVG Path using a rule-based method. 
-The two figures below show the results trained with **VQ-Stroke** with different dictionary sizes and additional attributes, e.g., color, path width, and opacity. 
+The figure below illustrates the results trained with **VQ-Stroke** with different dictionary sizes and additional attributes, e.g., color, path width, and opacity. 
 <p align="center">
   <img src="./src/controlled_svg_generation.png" width="80%"/>
 </p>
@@ -74,7 +74,7 @@ Here we present the results of vocabulary clustering under the condition of a **
 </p>
 
 We manually set the number of clusters to 10 categories and analyze them using the T-SNE method (https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). 
-We have divided the clustering results into two types. 
+We divide the clustering results into two types. 
 
 Specifically, the cases in the right column of the above figure indicate that **the distribution of these stroke tokens is very concentrated**. 
 These Stroke Tokens have very distinct features, such as representing **Dots, Vertical Lines, or direction-specific short lines**. 
