@@ -30,7 +30,7 @@ Since the SVG dataset we used does not provide these parameters, we randomly gen
 
 #### The comparison of effects using different attributes:
 The **Raw predicted SVG** only uses numerical coordinates as attributes, while **Random Colored SVG** fills the color attribute in the SVG Path using a rule-based method. 
-The figure below illustrates the results trained with **VQ-Stroke** with different dictionary sizes and additional attributes, e.g., color, path width, and opacity. 
+The figure below illustrates the results trained with **VQ-Stroke** containing additional attributes, e.g., color, path width, and opacity. 
 <p align="center">
   <img src="./src/controlled_svg_generation.png" width="80%"/>
 </p>
