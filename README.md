@@ -1,5 +1,5 @@
-# Supplemental Materials for Rebuttal
-
+# StrokeNUWA-ICML2024-Anonymous-Supplementary-Materials
+Dear Reviewers, within this anonymous link, we present a substantial selection of supplemental experiments, revisions to the paper, and an Appendix for your reference. Please use the following table of contents for expedited navigation.
 ## Table of Contents
 
 - [**Revision**: StrokeNUWA_Paper_Revision](./StrokeNUWA_Revision.pdf)
@@ -29,16 +29,15 @@ For simplicity of demonstration and validate the feasibility of adding more attr
 Since the SVG dataset we used does not provide these parameters, we randomly generated some values for a toy experiment.
 
 #### The comparison of effects using different attributes:
-The **Raw predicted SVG** only uses numerical coordinates as attributes, while **Random Colored SVG** fills the color attribute in the SVG Path using a rule-based method. 
-The figure below illustrates the results trained with **VQ-Stroke** containing additional attributes, e.g., color, path width, and opacity. 
+To clearly illustrate the comparison between the predicted strokes from the VQ-Stroke model under various settings, the figure below shows different predicted results of the same textual prompt. The **Raw Predicted SVG** utilizes numerical coordinates as attributes, in contrast, the **Random Colored SVG** applies a rule-based method to populate the color attribute in the SVG Path. The two subfigures at the bottom of the figure display the results obtained from training the **VQ-Stroke** model with varying vocabulary sizes and attributes, including color, path width, and opacity.
+
 <p align="center">
   <img src="./src/controlled_svg_generation.png" width="80%"/>
 </p>
 
 
 #### Attribute Controlled Prediction from EDM model
-We retrain the EDM model in the paper using the aforemented ''stroke tokens'' which fused with 3 attributes. 
-Finally, the effect of Figure 2 in original paper is shown below:
+We retrain the EDM model in the paper using the aforementioned ''stroke tokens'' which fused with 3 attributes. Finally, we show some generated cases below:
 <p align="center">
   <img src="./src/main_colored.png" width="80%"/>
 </p>
