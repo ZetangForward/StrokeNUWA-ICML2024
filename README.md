@@ -13,6 +13,8 @@
 - [**Section 7**: SVG Generation with Different Textual Prompts](#section7)
 
 
+**The `StrokeNUWA_Paper_Revision` file and `StrokeNUWA_Paper_Appendix` file are large; we recommend downloading it for local review.**
+
 ## **Section 1**: SVG Generation with more Attributes <a id="section1"></a>
 
 ### Illustration of SVG Generation with more attributes (color, stroke width and opacity)
